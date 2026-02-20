@@ -38,6 +38,7 @@ def input_processing_node(state: WorkFlowState) -> WorkFlowState:
     logger.info("NODE 1: Input Processing")
     
     try:
+        state['text_model'] = True
         state['to_use_model'] = True
         # Access state as dictionary
         query = state.get("query", "")
@@ -203,117 +204,127 @@ def engineer_prompt_node(state: WorkFlowState) -> WorkFlowState:
     logger.info("NODE 4: Prompt Engineering")
     
     try:
-        if state.get('to_use_model', True):
-            query = state.get("query", "")
-            context = state.get("context", "")
-            strategy = state.get("strategy", "prompt_only")
-            
-            # Initialize prompt builder
-            prompt_builder = PawPilotPromptBuilder()
-            
-            # Check if this is a vision workflow (has predicted_class from vision model)
-            predicted_class = state.get("predicted_class", "")
-            confidence_score = state.get("confidence_score", 0.0)
-            model_type = state.get("strategy", "default")
-            
-            # Build pet profile from state if available
-            pet_profile = {
-                "name": state.get("pet_name", "Unknown"),
-                "species": state.get("pet_species", "Unknown"),
-                "breed": state.get("pet_breed", "Unknown"),
-                "age": state.get("pet_age", "Unknown"),
-                "weight": state.get("pet_weight", "Unknown"),
-                "allergies": state.get("pet_allergies", []),
-                "medical_history": state.get("pet_medical_history", "None reported"),
-            }
-            # Determine which prompt to build based on workflow type
-            if predicted_class:
-                if predicted_class != "unknown":
-                    try:
-                        prompt = prompt_builder.build_vision_prompt(
-                            model_type=model_type,
+        if not state.get("text_model", False):
+            if state.get('to_use_model', True):
+                query = state.get("query", "")
+                context = state.get("context", "")
+                strategy = state.get("strategy", "prompt_only")
+                
+                # Initialize prompt builder
+                prompt_builder = PawPilotPromptBuilder()
+                
+                # Check if this is a vision workflow (has predicted_class from vision model)
+                predicted_class = state.get("predicted_class", "")
+                confidence_score = state.get("confidence_score", 0.0)
+                model_type = state.get("strategy", "default")
+                
+                # Build pet profile from state if available
+                pet_profile = {
+                    "name": state.get("pet_name", "Unknown"),
+                    "species": state.get("pet_species", "Unknown"),
+                    "breed": state.get("pet_breed", "Unknown"),
+                    "age": state.get("pet_age", "Unknown"),
+                    "weight": state.get("pet_weight", "Unknown"),
+                    "allergies": state.get("pet_allergies", []),
+                    "medical_history": state.get("pet_medical_history", "None reported"),
+                }
+                # Determine which prompt to build based on workflow type
+                if predicted_class:
+                    if predicted_class != "unknown":
+                        try:
+                            prompt = prompt_builder.build_vision_prompt(
+                                model_type=model_type,
+                                predicted_class=predicted_class,
+                                confidence_score=confidence_score,
+                                user_query=query,
+                                rag_context=context,
+                                pet_profile=pet_profile,
+                            
+                            )
+                            state['prompt_template'] = prompt
+                        except Exception as e:
+                            print(traceback.format_exc())
+                
+    
+                    else:
+                        # Default vision prompt
+                        prompt = prompt_builder.build_vision_default_prompt(
                             predicted_class=predicted_class,
                             confidence_score=confidence_score,
                             user_query=query,
                             rag_context=context,
-                            pet_profile=pet_profile,
-                        
+                            strategy=strategy
                         )
-                        state['prompt_template'] = prompt
+                        state["prompt_template"] = prompt
+                    
+                elif context and strategy == "rag":
+                    # RAG-based workflow - use RAG-aware prompts
+                    logger.info("Building RAG-aware prompt")
+                    
+                    # Determine module type based on query content
+                    query_lower = query.lower()
+                    
+                    if any(kw in query_lower for kw in ["emergency", "urgent", "bleeding", "poison", "choking"]):
+                        module = "emergency"
+                        user_query_dict = {
+                            "emergency_type": "general",
+                            "symptoms": query
+                        }
+                    elif any(kw in query_lower for kw in ["skin", "rash", "bump", "itch", "hair loss", "wound"]):
+                        module = "skin_diagnosis"
+                        user_query_dict = {
+                            "symptom_description": query
+                        }
+                    elif any(kw in query_lower for kw in ["food", "treat", "ingredient", "safe to eat", "toxic"]):
+                        module = "product_safety"
+                        user_query_dict = {
+                            "name": "Unknown Product",
+                            "type": "food",
+                            "ingredients": query
+                        }
+                    else:
+                        # Fallback to simple RAG prompt
+                        prompt = f"""Based on the following context, answer the user's query:
+        
+                                Context:    
+                                {context}
+                                    
+                                User Query: {query}
+                                    
+                                Please provide a comprehensive and accurate answer based on the provided context."""
+                        state["final_prompt"] = prompt
+                        state["prompt_template"] = "rag_default"
+                        logger.info(f"Prompt engineered using default RAG template ({len(prompt)} chars)")
+                        return state
+                    
+                    try:
+                        prompt = prompt_builder.build_rag_aware_prompt(
+                            module=module,
+                            user_query=user_query_dict,
+                            pet_profile=pet_profile,
+                            rag_retrieved_data=context
+                        )
+                        state["prompt_template"] = f"rag_{module}"
                     except Exception as e:
-                        print(traceback.format_exc())
-            
-
-                else:
-                    # Default vision prompt
-                    prompt = prompt_builder.build_vision_default_prompt(
-                        predicted_class=predicted_class,
-                        confidence_score=confidence_score,
-                        user_query=query,
-                        rag_context=context,
-                        strategy=strategy
-                    )
-                    state["prompt_template"] = prompt
-                
-            elif context and strategy == "rag":
-                # RAG-based workflow - use RAG-aware prompts
-                logger.info("Building RAG-aware prompt")
-                
-                # Determine module type based on query content
-                query_lower = query.lower()
-                
-                if any(kw in query_lower for kw in ["emergency", "urgent", "bleeding", "poison", "choking"]):
-                    module = "emergency"
-                    user_query_dict = {
-                        "emergency_type": "general",
-                        "symptoms": query
-                    }
-                elif any(kw in query_lower for kw in ["skin", "rash", "bump", "itch", "hair loss", "wound"]):
-                    module = "skin_diagnosis"
-                    user_query_dict = {
-                        "symptom_description": query
-                    }
-                elif any(kw in query_lower for kw in ["food", "treat", "ingredient", "safe to eat", "toxic"]):
-                    module = "product_safety"
-                    user_query_dict = {
-                        "name": "Unknown Product",
-                        "type": "food",
-                        "ingredients": query
-                    }
-                else:
-                    # Fallback to simple RAG prompt
-                    prompt = f"""Based on the following context, answer the user's query:
+                        logger.warning(f"Failed to build specialized prompt: {e}, using default")
+                        prompt = f"""Based on the following context, answer the user's query:
     
-                            Context:    
-                            {context}
-                                
-                            User Query: {query}
-                                
-                            Please provide a comprehensive and accurate answer based on the provided context."""
-                    state["final_prompt"] = prompt
-                    state["prompt_template"] = "rag_default"
-                    logger.info(f"Prompt engineered using default RAG template ({len(prompt)} chars)")
-                    return state
-                
-                try:
-                    prompt = prompt_builder.build_rag_aware_prompt(
-                        module=module,
-                        user_query=user_query_dict,
-                        pet_profile=pet_profile,
-                        rag_retrieved_data=context
-                    )
-                    state["prompt_template"] = f"rag_{module}"
-                except Exception as e:
-                    logger.warning(f"Failed to build specialized prompt: {e}, using default")
-                    prompt = f"""Based on the following context, answer the user's query:
-
-                            Context:    
-                            {context}
-                                
-                            User Query: {query}
-                                
-                            Please provide a comprehensive and accurate answer based on the provided context."""
-                    state["prompt_template"] = "rag_default"      
+                                Context:    
+                                {context}
+                                    
+                                User Query: {query}
+                                    
+                                Please provide a comprehensive and accurate answer based on the provided context."""
+                        state["prompt_template"] = "rag_default"  
+        else:
+            prompt_builder = PawPilotPromptBuilder()
+            query = state.get("query", "")
+            context = state.get("context", "")
+            state['final_prompt'] = prompt_builder.build_text_prompt(
+                user_query=query,
+                rag_context=context
+            )
+        print(state.get('final_prompt'))
         return state
         
     except Exception as e:
@@ -482,5 +493,3 @@ def should_use_rag(query) -> bool:
         return True
 
     return False
-
-
