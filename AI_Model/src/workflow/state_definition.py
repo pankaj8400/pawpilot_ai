@@ -63,6 +63,7 @@ class WorkFlowState(TypedDict, total=False):
     predicted_class : str
 
     to_use_model : bool
+    text_model : bool
 # ============================================================================
 # Helper function to create initial state
 # ============================================================================
