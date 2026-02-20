@@ -7,7 +7,7 @@ langchain-groq>=0.0.64
 
 
 # Vector stores
-pinecone-client>=2.2.1
+pinecone>=5.0.0  # Changed: Replaced pinecone-client>=2.2.1
 
 # Web / API
 fastapi>=0.111.2
