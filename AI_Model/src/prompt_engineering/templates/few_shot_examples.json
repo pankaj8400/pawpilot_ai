@@ -1,0 +1,180 @@
+{
+  "task_type": "skin_condition_analysis",
+  "examples": [
+    {
+      "input": {
+        "image_description": "Red, circular rash on dog's paw pad, approximately 1cm diameter, pet licking constantly",
+        "pet_profile": "Golden Retriever, 4 years old, outdoor dog, no known allergies",
+        "context": "Started 2 days ago, after playing in muddy water"
+      },
+      "output": {
+        "observation": "Circular red lesion with evidence of licking trauma",
+        "possible_conditions": [
+          "Paw pad dermatitis/fungal infection (likely due to wet environment)",
+          "Contact dermatitis from mud/contamination",
+          "Early hot spot from licking"
+        ],
+        "severity": "Medium",
+        "urgency": "Vet visit within 48 hours",
+        "first_aid": [
+          "1. Clean paw with lukewarm water, pat dry",
+          "2. Apply Elizabethan collar to prevent licking",
+          "3. Keep paw dry - use booties or paw covers",
+          "4. Do NOT apply random creams without vet approval"
+        ],
+        "monitoring": "Watch for spreading, increasing redness, swelling, or signs of infection",
+        "emergency_flags": "None - but escalate to URGENT if swelling develops or pus appears"
+      }
+    },
+    {
+      "input": {
+        "image_description": "Multiple black specks on white dog's skin, possible flea dirt, some scratching observed",
+        "pet_profile": "Labrador, 2 years old, indoor dog, last flea treatment 3 months ago",
+        "context": "Owner noticed scratching yesterday"
+      },
+      "output": {
+        "observation": "Possible flea dirt with behavioral signs of infestation",
+        "possible_conditions": [
+          "Flea infestation (HIGH confidence - flea dirt visible)",
+          "Possible allergic reaction to flea bites"
+        ],
+        "severity": "High",
+        "urgency": "Vet visit within 24-48 hours",
+        "first_aid": [
+          "1. Bathe pet with lukewarm water to remove flea dirt",
+          "2. Use flea comb to extract fleas/dirt",
+          "3. DO NOT use OTC flea treatments without vet approval",
+          "4. Wash all bedding in hot water",
+          "5. Vacuum thoroughly, especially where pet sleeps"
+        ],
+        "monitoring": "Track scratching frequency, look for hair loss or skin damage",
+        "emergency_flags": "If excessive scratching causes bleeding or signs of infection, escalate to URGENT"
+      }
+    }
+  ]
+}
+
+{
+  "task_type": "canine_emotion_detection",
+  "examples": [
+    {
+      "input": {
+        "image_features": "Tail between legs, ears pinned back, body lowered, making eye contact with human",
+        "audio": "Whining sound, frequency patterns indicate distress",
+        "context": "After thunderstorm, had fireworks nearby",
+        "recent_behavior": "Been hiding, not eating much"
+      },
+      "output": {
+        "primary_emotion": "Fear and Anxiety",
+        "confidence": "High",
+        "body_language_indicators": {
+          "tail": "Between legs - fear/submission",
+          "ears": "Pinned back - stress response",
+          "posture": "Lowered body - submissive, frightened",
+          "eyes": "Wide, dilated - fear response"
+        },
+        "audio_analysis": "Whining pattern consistent with distress vocalization",
+        "root_cause": "Environmental stressor - thunderstorm/fireworks",
+        "recommended_actions": [
+          "1. Create safe space - quiet room, familiar blanket",
+          "2. Use calming techniques - soft voice, slow movements",
+          "3. Try calming supplements or anxiety wraps (consult vet)",
+          "4. Desensitization training for future storms",
+          "5. Consider vet consultation if anxiety is severe"
+        ],
+        "monitoring": "Watch for signs of lasting trauma, changes in behavior"
+      }
+    },
+    {
+      "input": {
+        "image_features": "Loose wagging tail, play bow, mouth open in play-face, ears forward",
+        "audio": "Excited barks with rising pitch",
+        "context": "Owner just came home from work",
+        "recent_behavior": "Jumping around, bringing toys"
+      },
+      "output": {
+        "primary_emotion": "Happiness and Excitement",
+        "confidence": "Very High",
+        "body_language_indicators": {
+          "tail": "Wagging loosely - happiness, social bonding",
+          "posture": "Play bow - invitation to play",
+          "mouth": "Open, relaxed - playfulness",
+          "ears": "Forward - engagement and interest"
+        },
+        "audio_analysis": "Excited barks with positive intent",
+        "context_meaning": "Greeting behavior, excitement at owner's arrival",
+        "recommended_actions": [
+          "1. Engage in play to reinforce positive behavior",
+          "2. Use this opportunity for training (positive reinforcement)",
+          "3. Ensure adequate play and exercise",
+          "4. Maintain routine greetings for bonding"
+        ]
+      }
+    }
+  ]
+}
+
+{
+  "task_type": "emergency_response",
+  "examples": [
+    {
+      "input": {
+        "emergency": "Dog ate chocolate (quantity unknown), owner found wrapper",
+        "pet_profile": "Chihuahua, 2kg, 3 years old",
+        "context": "Happened 15 minutes ago"
+      },
+      "output": {
+        "severity": "🚨 POTENTIALLY LIFE-THREATENING - IMMEDIATE ACTION REQUIRED",
+        "timeline": "You have approximately 30-60 minutes before symptoms may appear",
+        "immediate_steps": [
+          "1. CALL YOUR VET IMMEDIATELY - Have this ready: chocolate type (dark/milk/white), estimated amount",
+          "2. Do NOT induce vomiting without vet instruction",
+          "3. If your vet is closed, go to emergency vet clinic NOW",
+          "4. Monitor for: vomiting, diarrhea, rapid breathing, seizures",
+          "5. Keep chocolate wrapper for vet reference"
+        ],
+        "what_NOT_to_do": [
+          "❌ Do NOT wait to see if symptoms develop",
+          "❌ Do NOT induce vomiting without vet approval",
+          "❌ Do NOT give activated charcoal without vet instruction",
+          "❌ Do NOT delay going to vet"
+        ],
+        "critical_window": "Dark chocolate is more toxic - get to vet within 1 hour",
+        "vet_urgency": "CALL IMMEDIATELY - POTENTIAL TOXICITY CASE"
+      }
+    },
+    {
+      "input": {
+        "emergency": "Dog having seizure - uncontrolled shaking, loss of consciousness",
+        "pet_profile": "German Shepherd, 5 years old, no seizure history",
+        "context": "First time, started 2 minutes ago"
+      },
+      "output": {
+        "severity": "🚨 LIFE-THREATENING - IMMEDIATE ACTION REQUIRED",
+        "timeline": "Seizures lasting >5 minutes risk permanent brain damage",
+        "immediate_steps": [
+          "1. CLEAR THE AREA - Remove furniture/hard objects",
+          "2. Do NOT restrain the dog - let seizure run its course",
+          "3. Protect head with soft pillows/blankets",
+          "4. Time the seizure - how long is it lasting?",
+          "5. CALL YOUR VET IMMEDIATELY once seizure stops",
+          "6. If seizure lasts >5 minutes, call emergency vet while seizure ongoing"
+        ],
+        "what_NOT_to_do": [
+          "❌ Do NOT hold the dog down",
+          "❌ Do NOT put hand in mouth (dog cannot swallow tongue)",
+          "❌ Do NOT move the dog unless in immediate danger",
+          "❌ Do NOT panic - this affects your dog"
+        ],
+        "after_seizure": [
+          "1. Keep dog calm and quiet",
+          "2. Check for injuries",
+          "3. Offer water only if fully conscious",
+          "4. Monitor for repeat seizures",
+          "5. Get to vet for diagnostics"
+        ],
+        "vet_urgency": "CALL IMMEDIATELY - First seizure requires emergency evaluation"
+      }
+    }
+  ]
+}

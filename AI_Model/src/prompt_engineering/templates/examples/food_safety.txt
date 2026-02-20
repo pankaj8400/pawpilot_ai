@@ -1,0 +1,134 @@
+FOOD SAFETY ANALYSIS EXAMPLES FOR PAWPILOT AI
+
+Example 1: Human Food - Chocolate Cake
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USER INPUT:
+"My dog ate a piece of chocolate birthday cake (about 2 bites). I'm worried. He's a 5kg Chihuahua."
+
+PET PROFILE:
+- Weight: 5 kg
+- Species: Dog
+- Age: 2 years
+- Allergies: None known
+
+EXPECTED OUTPUT:
+
+🚨 POTENTIAL TOXICITY - IMMEDIATE ACTION REQUIRED
+
+## Food Item Analyzed
+Chocolate Birthday Cake
+
+## Toxicity Assessment
+⚠️ **POTENTIALLY TOXIC - Action Required**
+
+## Toxic Components Identified
+🚨 **Chocolate** - Contains theobromine (toxic to dogs)
+
+## Severity Calculation
+For 5kg dog eating chocolate cake:
+- Amount eaten: ~2 bites (estimated 10-15g)
+- If dark chocolate: MODERATE risk
+- If milk chocolate: LOW-MODERATE risk
+- If white chocolate: No theobromine (not toxic)
+
+## Risk Level
+🟠 **MODERATE - Depends on chocolate type**
+
+## IMMEDIATE ACTION REQUIRED
+1. **Determine chocolate type** - Dark/milk/white? (Check cake recipe or ask baker)
+2. **If Dark Chocolate**: CALL YOUR VET IMMEDIATELY
+   - Small dogs are at higher risk
+   - Timeline: Symptoms appear in 1-4 hours
+   - Can continue 8-12 hours
+3. **If Milk Chocolate**: Monitor closely, call vet if symptoms appear
+4. **If White Chocolate**: Not toxic, but monitor for stomach upset from sugar/fat
+
+## Symptoms to Watch For (Next 12 hours)
+- Vomiting or diarrhea
+- Restlessness, hyperactivity
+- Rapid heartbeat
+- Muscle tremors
+- Excessive panting
+
+## When to Seek Emergency Care
+Seek IMMEDIATE emergency vet care if:
+- Seizures occur
+- Collapse or extreme lethargy
+- Difficulty breathing
+- Severe vomiting
+
+## Treatment
+- Vet may induce vomiting (if caught early, <2 hours)
+- Activated charcoal (prevents absorption)
+- Monitoring for 24-48 hours
+- IV fluids if severe
+
+## Prevention
+- Store ALL chocolate in secure location
+- Include family in food safety rules
+- Have chocolate list visible (fridge reminder)
+
+
+Example 2: Pet Food Product - Commercial Dog Food
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USER INPUT:
+"Is this dog food good? [Image of bag] My dog has chicken allergy and sensitive stomach. She's a 20kg mixed breed."
+
+PET PROFILE:
+- Weight: 20 kg
+- Allergies: Chicken (primary), corn (sensitive)
+- Health conditions: Sensitive stomach, history of diarrhea
+
+EXPECTED OUTPUT:
+
+## Product Analysis: [Brand Name] Dog Food
+
+## 🔍 Ingredients Review
+Main Ingredients: Beef, brown rice, sweet potato, fish meal, chicken by-products, corn meal...
+
+## ✅ Positive Aspects
+- Beef as primary protein (good for chicken allergy)
+- Sweet potato (good fiber source)
+- Fish meal (omega-3 source)
+
+## 🚨 Critical Issues
+❌ **CONTAINS CHICKEN BY-PRODUCTS** - Your dog is allergic!
+❌ **CONTAINS CORN MEAL** - Your dog is sensitive to corn
+❌ **Chicken by-products present in ingredient list** - Risk of allergic reaction
+
+## Safety Assessment
+**❌ NOT RECOMMENDED** - Contains multiple allergens for this dog
+
+## Allergen Risk
+- Chicken content: 🚨 High Risk (will trigger allergy)
+- Corn content: ⚠️ Moderate Risk (may trigger sensitivity)
+- Expected reaction: Itching, skin issues, diarrhea within 2-7 days
+
+## Better Alternatives
+1. **Limited Ingredient Diet with Beef Base**
+   - Contains only: Beef, sweet potato, peas, carrots
+   - No chicken, corn, or common fillers
+   
+2. **Hydrolyzed Protein Diet**
+   - For sensitive digestion
+   - Proteins broken down for easier absorption
+   
+3. **Fish-based Diet**
+   - Primary protein is fish instead of chicken
+   - High omega-3 for skin health
+
+## Portion Recommendation
+**DO NOT FEED** due to allergen content
+
+## Final Recommendation
+❌ **DO NOT USE** - Will cause allergic reactions
+✅ **SWITCH TO**: Grain-free, chicken-free alternative with limited ingredients
+
+## Action Steps
+1. Do not open current bag (or return if possible)
+2. Select food from "Better Alternatives" list
+3. Transition slowly over 7 days to avoid stomach upset
+4. Monitor for improvement in skin and digestion
+5. Discuss with vet before switching

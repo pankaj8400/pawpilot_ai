@@ -1,0 +1,46 @@
+
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Large model files
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.model
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads/temp data
+AI_Model/uploads/
+# Ignore all data folders in vision_model and audio_model
+AI_Model/vision_model/data/
+AI_Model/audio_model/data/
+temp/
+tmp/
+EOF

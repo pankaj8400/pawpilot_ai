@@ -1,0 +1,138 @@
+SKIN CONDITION DIAGNOSIS EXAMPLES FOR PAWPILOT AI
+
+Example 1: Hot Spot (Acute Moist Dermatitis)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USER INPUT:
+"My Golden Retriever has a wet, painful spot on his shoulder. It appeared suddenly yesterday. He keeps licking it and it's getting bigger."
+
+PET PROFILE:
+- Name: Max
+- Breed: Golden Retriever
+- Age: 5 years
+- Allergies: None known
+- Medical history: Ear infections in past
+
+EXPECTED OUTPUT:
+
+## Observations
+Acute wet dermatitis (hot spot) with rapid onset and progression. Dog actively licking the area, causing further damage.
+
+## Possible Conditions
+1. **Hot spot (Acute Moist Dermatitis)** - VERY HIGH likelihood
+   - Sudden onset, wet appearance, rapid spread, intense itching
+   - Common in long-haired breeds like Golden Retrievers
+   - Caused by: allergies, flea bite, stress, or moisture (bathing, swimming)
+
+2. **Flea allergy dermatitis** - MEDIUM likelihood
+   - If hot spot caused by flea bite reaction
+
+3. **Skin infection (bacterial)** - MEDIUM likelihood
+   - Secondary infection from licking/scratching
+
+## Severity Level
+🟠 **MEDIUM** - Painful but not life-threatening. Worsens quickly if untreated.
+
+## Urgency for Vet Visit
+⏰ **Within 24-48 hours** - Can worsen rapidly if left untreated.
+
+## First Aid Steps (Do NOW)
+1. **Trim hair around area** - Carefully clip matted fur to allow air circulation
+2. **Clean gently** - Use lukewarm water and mild soap, pat dry thoroughly
+3. **Prevent licking** - Apply Elizabethan collar immediately (very important!)
+4. **Do NOT apply** - Avoid random creams; most worsen the condition
+5. **Keep dry** - No swimming or baths until cleared by vet
+
+## Monitoring
+- Watch for: Increased redness, pus, swelling, spreading to other areas
+- Monitor daily: Take photos to track size changes
+- Red flags for escalation:
+  - Spread beyond fist-sized area
+  - Pus or discharge
+  - Fever or lethargy
+  - Not improving after 48 hours
+
+## Vet Visit Recommendation
+✅ **See vet within 24-48 hours**. The vet will likely:
+- Possibly prescribe antibiotics (if infected)
+- Provide topical treatment
+- Address underlying cause (allergies, fleas)
+- Give pain relief if needed
+
+## Prevention Tips
+- Regular grooming to catch issues early
+- Flea prevention (important for this breed)
+- Dry thoroughly after swimming
+- Address skin allergies if present
+
+
+Example 2: Ear Infection (Otitis)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USER INPUT:
+"My dog keeps scratching his ear and shaking his head. There's a foul smell coming from his ear. He seems uncomfortable."
+
+PET PROFILE:
+- Name: Charlie
+- Breed: Labrador Retriever
+- Age: 3 years
+- Allergies: Chicken (food allergy)
+- Medical history: Recurring ear infections
+
+EXPECTED OUTPUT:
+
+## Observations
+Signs consistent with ear infection: head shaking, scratching, odor. History of recurring infections increases likelihood.
+
+## Possible Conditions
+1. **Bacterial ear infection (Otitis Externa)** - VERY HIGH likelihood
+   - Foul smell is classic sign
+   - Head shaking and scratching are primary symptoms
+   - Recurrent history suggests predisposition
+
+2. **Yeast infection (Malassezia)** - HIGH likelihood
+   - Often accompanies bacterial infection
+   - Common in Labradors and floppy-eared breeds
+   - May have different smell (musty/corn chips odor)
+
+3. **Ear mites** - MEDIUM likelihood
+   - More common in puppies but possible at any age
+   - Usually less foul-smelling than bacterial
+
+4. **Foreign object or water** - LOW likelihood
+   - Possible if recent water exposure
+
+## Severity Level
+🟠 **MEDIUM** - Painful and can worsen, but not immediately dangerous
+
+## Urgency for Vet Visit
+⏰ **Within 24-48 hours** - Needs professional cleaning and treatment
+
+## First Aid Steps (Do NOW)
+1. **Do NOT put water in ear** - Will worsen infection
+2. **Do NOT use cotton swabs deep in ear** - Risk damaging eardrum
+3. **Gently clean outer ear** - Use soft cloth, do NOT probe deep
+4. **Prevent scratching** - Keep nails trimmed, consider cone if severe
+5. **Avoid triggers** - Don't bathe until infection cleared
+
+## Monitoring
+- Watch for: Increased discharge, bleeding, swelling of ear flap, head tilt, balance issues
+- Red flags for emergency:
+  - Head tilt or loss of balance (inner ear infection)
+  - Blood or pus draining
+  - Severe swelling
+  - Fever or lethargy
+
+## Vet Visit Recommendation
+✅ **See vet within 24 hours**. The vet will:
+- Clean ear thoroughly (needs professional equipment)
+- Culture to identify organism (bacterial vs yeast)
+- Prescribe appropriate drops or oral medication
+- Address underlying cause (allergies, anatomy)
+- Discuss prevention strategies
+
+## Prevention Tips
+- For floppy-eared breeds: Keep ears dry and clean
+- Address food allergies (you noted chicken allergy)
+- Regular ear checks
+- Consider preventative ear cleaning during allergy season

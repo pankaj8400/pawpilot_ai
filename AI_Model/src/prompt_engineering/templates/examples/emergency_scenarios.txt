@@ -1,0 +1,114 @@
+EMERGENCY RESPONSE EXAMPLES FOR PAWPILOT AI
+
+Example 1: Choking
+━━━━━━━━━━━━━━━━━
+
+SCENARIO:
+"My dog is choking! He grabbed a toy and now he can't breathe properly. He's gagging and drooling. Started 30 seconds ago."
+
+🚨 LIFE-THREATENING - IMMEDIATE ACTION REQUIRED
+⏱️ CRITICAL WINDOW: 3-5 minutes
+
+## IMMEDIATE ACTIONS (IN ORDER):
+
+1. **CHECK IF OBJECT VISIBLE**
+   - Look in back of throat
+   - If visible and can reach safely → Remove with fingers
+   - If NOT visible → Go to Step 2
+
+2. **PERFORM HEIMLICH MANEUVER** (for dogs)
+   - Stand over dog from behind
+   - Place fist under ribcage
+   - Push upward firmly 5-6 times
+   - Check if object dislodged
+
+3. **REPEAT if needed**
+   - Back blows + Heimlich alternately
+   - Up to 3 cycles (about 1-2 minutes max)
+
+4. **IF NOT WORKING AFTER 2 MINUTES**
+   - STOP attempting
+   - GO TO EMERGENCY VET IMMEDIATELY
+   - Don't delay
+
+5. **IF OBJECT REMOVED**
+   - Check for breathing
+   - Check for injuries inside mouth/throat
+   - Go to vet to check for damage
+
+## ❌ WHAT NOT TO DO:
+- Do NOT use objects/tools to remove (damage throat)
+- Do NOT perform Heimlich if object removed
+- Do NOT waste time - go to ER if not cleared in 2 minutes
+- Do NOT put your hand too far back (risk of bite)
+
+## 📞 VET URGENCY
+If choking resolved: Go to vet within 1 hour for check-up
+If still choking: **GO TO EMERGENCY VET IMMEDIATELY - DO NOT DELAY**
+
+## ⚠️ WARNING SIGNS
+- No improvement after 2 minutes → Emergency
+- Collapse or unconsciousness → CPR needed (emergency)
+- Blue-tinged gums → Severe oxygen deprivation (emergency)
+
+
+Example 2: Poisoning - Rat Poison/Toxin Ingestion
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCENARIO:
+"My dog ate rat poison (I found the package). He ate it maybe 30 minutes ago. He's a 25kg Labrador. I don't know how much he ate."
+
+🚨 POTENTIALLY LIFE-THREATENING - IMMEDIATE ACTION REQUIRED
+⏱️ CRITICAL WINDOW: 2-4 hours (earlier is better)
+
+## IMMEDIATE ACTIONS (IN ORDER):
+
+1. **CALL POISON CONTROL + YOUR VET IMMEDIATELY**
+   - Have ready: Type of poison, amount eaten (estimate), time eaten
+   - Poison Control: [Your local number]
+   - Your Vet: [Your vet number]
+
+2. **DO NOT WAIT FOR SYMPTOMS**
+   - Some poisons take hours to show effects
+   - Treatment is more effective before symptoms appear
+
+3. **GATHER INFORMATION FOR VET**
+   - Poison package/name (have it ready)
+   - Amount eaten (estimate)
+   - Time eaten
+   - Dog's weight, age, health conditions
+
+4. **FOLLOW VET'S INSTRUCTIONS**
+   - They may advise inducing vomiting (must do within 30-60 mins)
+   - They may recommend activated charcoal
+   - They may recommend bringing dog to clinic
+
+5. **IF VET SAYS INDUCE VOMITING AT HOME**
+   - Use only 3% hydrogen peroxide (NOT other types)
+   - Dose: 1 teaspoon per 5kg body weight
+   - Wait 10-15 minutes
+   - If no vomiting, can repeat once
+   - Then go to vet
+
+6. **GET TO VET IMMEDIATELY**
+   - Even if dog seems fine
+   - Bring poison packaging
+
+## ❌ WHAT NOT TO DO:
+- Do NOT delay calling vet (time is critical)
+- Do NOT induce vomiting without vet instruction
+- Do NOT use regular hydrogen peroxide (too strong)
+- Do NOT assume dog will be fine if no symptoms
+- Do NOT wait to see if symptoms develop
+
+## 📞 VET URGENCY
+**CALL IMMEDIATELY AND GO TO CLINIC IMMEDIATELY**
+This is a life-threatening emergency.
+
+## ⚠️ WARNING SIGNS
+- Vomiting or diarrhea (may contain blood)
+- Lethargy, weakness
+- Bleeding from gums, nose, or stools
+- Difficult breathing
+- Seizures
+ANY of these → Emergency vet IMMEDIATELY
