@@ -7,7 +7,7 @@ from embeddings import embed_query
 from dotenv import load_dotenv
 load_dotenv()
 INDEX_NAME = os.getenv('PINECONE_INDEX_NAME')
-API_KEY = os.getenv('PINECONE_API_KEY')
+API_KEY = os.getenv('PINECONEAPIKEY')
 
 if not INDEX_NAME:
     raise RuntimeError("PINECONE_INDEX_NAME is missing")
